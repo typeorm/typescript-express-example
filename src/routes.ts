@@ -5,7 +5,7 @@ import {postSaveAction} from "./controller/PostSaveAction";
 /**
  * All application routes.
  */
-export const ROUTES = [
+export const AppRoutes = [
     {
         path: "/posts",
         method: "get",

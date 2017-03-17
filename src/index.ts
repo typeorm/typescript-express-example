@@ -3,7 +3,7 @@ import {createConnection} from "typeorm";
 import {Request, Response} from "express";
 import * as express from "express";
 import * as bodyParser from "body-parser";
-import {ROUTES} from "./routes";
+import {AppRoutes} from "./routes";
 
 // create connection with database
 // note that its not active database connection
@@ -14,8 +14,8 @@ createConnection().then(async connection => {
     const app = express();
     app.use(bodyParser.json());
 
-    // register all routes
-    ROUTES.forEach(route => {
+    // register all application routes
+    AppRoutes.forEach(route => {
         app[route.method](route.path, (request: Request, response: Response, next: Function) => {
             route.action(request, response)
                 .then(() => next)
@@ -26,4 +26,4 @@ createConnection().then(async connection => {
     // run app
     app.listen(3000);
 
-}).catch(error => console.log("Error: ", error));
+}).catch(error => console.log("TypeORM connection error: ", error));
