@@ -17,6 +17,7 @@ export async function postGetByIdAction(request: Request, response: Response) {
     if (!post) {
         response.status(404);
         response.end();
+        return;
     }
 
     // return loaded post
