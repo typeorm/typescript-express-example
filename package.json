@@ -1,0 +1,42 @@
+{
+  "name": "typeorm-typescript-express-example",
+  "version": "0.0.1",
+  "description": "Example how to use Express and TypeORM with TypeScript.",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "author": {
+    "name": "Umed Khudoiberdiev",
+    "email": "pleerock.me@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typeorm/typescript-express-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/typeorm/typescript-express-example/issues"
+  },
+  "tags": [
+    "orm",
+    "typescript",
+    "typescript-orm",
+    "typeorm-sample",
+    "typeorm-example",
+    "typeorm-express-example"
+  ],
+  "devDependencies": {
+    "@types/body-parser": "^1.16.0",
+    "express": "^4.15.2",
+    "typescript": "^2.1.5"
+  },
+  "dependencies": {
+    "@types/express": "^4.0.35",
+    "@types/node": "^7.0.4",
+    "body-parser": "^1.17.1",
+    "mysql": "^2.12.0",
+    "reflect-metadata": "^0.1.9",
+    "typeorm": "0.0.9"
+  },
+  "scripts": {
+    "start": "tsc && node src/index.js"
+  }
+}
