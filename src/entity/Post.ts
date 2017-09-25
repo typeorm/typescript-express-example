@@ -1,10 +1,10 @@
-import {Table, PrimaryColumn, Column, ManyToMany, JoinTable} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable} from "typeorm";
 import {Category} from "./Category";
 
-@Table()
+@Entity()
 export class Post {
 
-    @PrimaryColumn("int", { generated: true })
+    @PrimaryGeneratedColumn()
     id: number;
 
     @Column()
