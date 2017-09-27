@@ -14,7 +14,7 @@ export async function postSaveAction(request: Request, response: Response) {
     const newPost = postRepository.create(request.body);
 
     // save received post
-    await postRepository.persist(newPost);
+    await postRepository.save(newPost);
 
     // return saved post back
     response.send(newPost);
