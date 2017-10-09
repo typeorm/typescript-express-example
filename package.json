@@ -34,7 +34,7 @@
     "express": "^4.15.5",
     "mysql": "^2.14.1",
     "reflect-metadata": "^0.1.10",
-    "typeorm": "0.1.0-alpha.49"
+    "typeorm": "^0.1.0"
   },
   "scripts": {
     "start": "tsc && node src/index.js"
