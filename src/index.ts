@@ -6,8 +6,8 @@ import * as bodyParser from "body-parser";
 import {AppRoutes} from "./routes";
 
 // create connection with database
-// note that its not active database connection
-// TypeORM creates you connection pull to uses connections from pull on your requests
+// note that it's not active database connection
+// TypeORM creates connection pools and uses them for your requests
 createConnection().then(async connection => {
 
     // create express app
