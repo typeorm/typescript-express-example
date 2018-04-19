@@ -11,7 +11,7 @@ export async function postGetByIdAction(request: Request, response: Response) {
     const postRepository = getManager().getRepository(Post);
 
     // load a post by a given post id
-    const post = await postRepository.findOneById(request.params.id);
+    const post = await postRepository.findOne(request.params.id);
 
     // if post was not found return 404 to the client
     if (!post) {
