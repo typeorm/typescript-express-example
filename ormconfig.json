@@ -7,13 +7,13 @@
   "database": "test",
   "synchronize": true,
   "entities": [
-    "src/entity/*.js"
+    "src/entity/*.ts"
   ],
   "subscribers": [
-    "src/subscriber/*.js"
+    "src/subscriber/*.ts"
   ],
   "migrations": [
-    "src/migration/*.js"
+    "src/migration/*.ts"
   ],
   "cli": {
     "entitiesDir": "src/entity",
