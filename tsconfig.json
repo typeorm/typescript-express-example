@@ -1,13 +1,14 @@
 {
-    "version": "2.4.2",
+    "version": "2.4.3",
     "compilerOptions": {
-        "lib": ["es5", "es6"],
+        "lib": ["es5", "es6", "esnext"],
         "target": "es6",
         "module": "commonjs",
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "outDir": "dist"
     },
     "exclude": [
         "node_modules"
