@@ -1,5 +1,5 @@
 import {Request, Response} from "express";
-import {getManager} from "typeorm";
+import { AppDataSource } from "../data-source";
 import {Post} from "../entity/Post";
 
 /**
@@ -8,7 +8,7 @@ import {Post} from "../entity/Post";
 export async function postSaveAction(request: Request, response: Response) {
 
     // get a post repository to perform operations with post
-    const postRepository = getManager().getRepository(Post);
+    const postRepository = AppDataSource.manager.getRepository(Post);
 
     // create a real post object from post json object sent over http
     const newPost = postRepository.create(request.body);

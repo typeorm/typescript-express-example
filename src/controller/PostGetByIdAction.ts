@@ -1,5 +1,5 @@
 import {Request, Response} from "express";
-import {getManager} from "typeorm";
+import { AppDataSource } from "../data-source";
 import {Post} from "../entity/Post";
 
 /**
@@ -8,10 +8,12 @@ import {Post} from "../entity/Post";
 export async function postGetByIdAction(request: Request, response: Response) {
 
     // get a post repository to perform operations with post
-    const postRepository = getManager().getRepository(Post);
+    const postRepository = AppDataSource.manager.getRepository(Post);
 
     // load a post by a given post id
-    const post = await postRepository.findOne(request.params.id);
+    const post = await postRepository.findOneBy({
+        id: +request.params.id // where id is your column name
+    });
 
     // if post was not found return 404 to the client
     if (!post) {
