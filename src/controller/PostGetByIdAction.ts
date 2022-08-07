@@ -1,6 +1,7 @@
 import {Request, Response} from "express";
 import {getManager} from "typeorm";
-import {Post} from "../entity/Post";
+// import {Post} from "../entity/Post";
+import { Product } from "../entity/Product";
 
 /**
  * Loads post by a given id.
@@ -8,7 +9,7 @@ import {Post} from "../entity/Post";
 export async function postGetByIdAction(request: Request, response: Response) {
 
     // get a post repository to perform operations with post
-    const postRepository = getManager().getRepository(Post);
+    const postRepository = getManager().getRepository(Product);
 
     // load a post by a given post id
     const post = await postRepository.findOne(request.params.id);

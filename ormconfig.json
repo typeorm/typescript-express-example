@@ -2,9 +2,9 @@
   "type": "mysql",
   "host": "localhost",
   "port": 3306,
-  "username": "test",
-  "password": "test",
-  "database": "test",
+  "username": "root",
+  "password": "calacref11",
+  "database": "dioBackTypeORM",
   "synchronize": true,
   "entities": [
     "src/entity/*.js"
