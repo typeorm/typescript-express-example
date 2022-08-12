@@ -5,15 +5,9 @@
   "username": "root",
   "password": "calacref11",
   "database": "dioBackTypeORM",
-  "synchronize": true,
+  "synchronize": false,
   "entities": [
     "src/entity/*.js"
-  ],
-  "subscribers": [
-    "src/subscriber/*.js"
-  ],
-  "migrations": [
-    "src/migration/*.js"
   ],
   "cli": {
     "entitiesDir": "src/entity",

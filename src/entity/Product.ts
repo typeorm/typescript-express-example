@@ -8,7 +8,7 @@ export class Product {
 
     @Column()
     productName: string;
-    
+
     @Column()
     originalPrice: number;
     
