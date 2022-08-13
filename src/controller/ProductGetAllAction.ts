@@ -13,8 +13,6 @@ export async function productGetAllAction(request: Request, response: Response) 
     // load posts
     const product = await productRepository.find();
 
-    console.log(product,'where is categoryName')
-
     // return loaded product
     response.send(product);
 }

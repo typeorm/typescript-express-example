@@ -3,6 +3,9 @@ import {postGetByIdAction} from "./controller/PostGetByIdAction";
 import {productSaveAction} from "./controller/ProductSaveAction";
 import { categoriesGetAllAction } from "./controller/CategoriesGetAllAction";
 import { categoriesSaveAction } from "./controller/CategoriesSaveAction";
+import { newUserSaveAction } from "./controller/NewUserSaveAction";
+import verifyJWT from "./controller/JWT";
+import { userLoginAction } from "./controller/UserLoginAction";
 /**
  * All application routes.
  */
@@ -30,6 +33,17 @@ export const AppRoutes = [
     {
         path:"/categories",
         method: "post",
-        action: categoriesSaveAction
-    }
+        action: categoriesSaveAction,
+        next: verifyJWT
+    },
+    {
+        path:"/newUser",
+        method:"post",
+        action: newUserSaveAction
+    },
+    {
+        path:"/login",
+        method: "post",
+        action: userLoginAction
+    },
 ];

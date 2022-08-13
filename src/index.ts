@@ -20,8 +20,8 @@ createConnection().then(async connection => {
     AppRoutes.forEach(route => {
         app[route.method](route.path, (request: Request, response: Response, next: Function) => {
             route.action(request, response)
-                .then(() => next)
-                .catch(err => next(err));
+                .then(() =>next())
+                // .catch(err => next(err));
         });
     });
 
