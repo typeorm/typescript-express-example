@@ -1,7 +1,7 @@
 import {Request, Response} from "express";
 import {getManager} from "typeorm";
-// import {Post} from "../entity/Post";
 import {Product} from "../entity/Product";
+import { Category } from "../entity/Category";
 /**
  * Loads all posts from the database.
  */
@@ -12,6 +12,8 @@ export async function productGetAllAction(request: Request, response: Response) 
 
     // load posts
     const product = await productRepository.find();
+
+    console.log(product,'where is categoryName')
 
     // return loaded product
     response.send(product);
