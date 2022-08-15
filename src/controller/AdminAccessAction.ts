@@ -6,7 +6,6 @@ import * as jwt  from "jsonwebtoken";
 export async function adminAccessAction (req:Request, res:Response){ 
   var token = req.cookies.token
   // var token = req.body.token
-  console.log(jwt.decode(token), 'decoded')
   if(!token){
       res.status(500).send({ auth: false, message: 'Token inválido.' })
       return 

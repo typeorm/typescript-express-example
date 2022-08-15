@@ -2,15 +2,28 @@ import {Request, Response} from "express";
 import {getManager} from "typeorm";
 import { Category } from "../entity/Category";
 import * as jwt from 'jsonwebtoken'
-
+ import { User } from "../entity/User";
 // import {Post} from "../entity/Post";
 /**
  * Saves given post.
  */
 export async function categoriesSaveAction(request: Request, res: Response) {
 
-const checkToken = () =>{
+    const usersRepository = getManager().getRepository(User);
 
+    const userId = jwt.decode(request.cookies.token)
+    const user = await usersRepository.findOne({ where:
+        { id:userId }
+    });
+    if(!user){
+        res.status(404).send('not authenticated');
+        return 
+    } 
+    if(!user.adminStatus) {
+        res.status(404).send('not authenticated')
+        return
+    }
+const checkToken = () =>{
 const token = request.cookies.token
 console.log(token)
     
@@ -26,7 +39,6 @@ console.log(token)
     res.status(500).send({ auth: false, message: 'Token inválido.'});
     return false
 }
-
 if(checkToken()){  
     // get a post repository to perform operations with post
     
