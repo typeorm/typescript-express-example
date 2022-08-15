@@ -19,7 +19,11 @@ export async function userLoginAction(req:Request, res:Response) {
         const token = jwt.sign(user.id.toString(), process.env.SECRET, {
                                 // expiresIn: 43200 // expires in 12h
                                 });
-                  res.cookie('token',token,{httpOnly:true}) 
+                  res.cookie('token',token,{httpOnly:true})
+                  if (user.adminStatus){
+                    res.status(200).send({ auth: true, token: token, adminStatus: true})
+                    return
+                  }
                   res.status(200).send({ auth: true, token: token})  //JWT TOKEN RES test
                                 return
                 } 

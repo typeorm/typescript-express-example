@@ -11,10 +11,15 @@ import * as cors from "cors";
 // TypeORM creates connection pools and uses them for your requests
 createConnection().then(async connection => {
 
-    // create express app
+    const corsConfig = {
+        origin: 'http://localhost:3000',
+        credentials: true,
+      };
+
     const app = express();
     app.use(bodyParser.json());
-    app.use(cors()) 
+    app.use(cors(corsConfig)) 
+    app.options('*', cors(corsConfig));
 
     // register all application routes
     AppRoutes.forEach(route => {
