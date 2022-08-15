@@ -5,6 +5,7 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import {AppRoutes} from "./routes";
 import * as cors from "cors";
+import cookieParser = require("cookie-parser");
 
 // create connection with database
 // note that it's not active database connection
@@ -20,6 +21,7 @@ createConnection().then(async connection => {
     app.use(bodyParser.json());
     app.use(cors(corsConfig)) 
     app.options('*', cors(corsConfig));
+    app.use(cookieParser());
 
     // register all application routes
     AppRoutes.forEach(route => {

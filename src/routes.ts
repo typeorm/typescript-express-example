@@ -6,10 +6,22 @@ import { categoriesSaveAction } from "./controller/CategoriesSaveAction";
 import { newUserSaveAction } from "./controller/NewUserSaveAction";
 import verifyJWT from "./controller/JWT";
 import { userLoginAction } from "./controller/UserLoginAction";
+import {verifyToken} from "./controller/VerifyToken";
+import { adminAccessAction } from "./controller/AdminAccessAction";
 /**
  * All application routes.
  */
 export const AppRoutes = [
+    {
+        path: 'adminAccessAction',
+        method:'post',
+        action: adminAccessAction
+    },
+    {
+        path: 'verifyToken',
+        method: 'post',
+        action: verifyToken
+    },
     {
         path: "/product",
         method: "get",
@@ -34,7 +46,6 @@ export const AppRoutes = [
         path:"/categories",
         method: "post",
         action: categoriesSaveAction,
-        next: verifyJWT
     },
     {
         path:"/newUser",

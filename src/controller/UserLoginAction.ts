@@ -21,7 +21,7 @@ export async function userLoginAction(req:Request, res:Response) {
                                 });
                   res.cookie('token',token,{httpOnly:true})
                   if (user.adminStatus){
-                    res.status(200).send({ auth: true, token: token, adminStatus: true})
+                    res.status(200).send({ auth: true, adminStatus: true})
                     return
                   }
                   res.status(200).send({ auth: true, token: token})  //JWT TOKEN RES test

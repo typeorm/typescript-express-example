@@ -1,10 +1,11 @@
-import { response } from "express";
+import { Request, Response, response } from "express";
 import * as jwt  from "jsonwebtoken";
 
 
-function verifyJWT(req:any, res:any, next:Function){ 
-    var token = req.cookie.token
+function verifyJWT(req:Request, res:Response, next:Function){ 
+    var token = req.cookies.token
     // var token = req.body.token
+    console.log('decoded token', jwt.decode(token))
     if(!token){
       return res.status(500).send({ auth: false, message: 'Token inválido.' })
     }
