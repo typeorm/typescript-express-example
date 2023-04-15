@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Example how to use Express and TypeORM with TypeScript.",
   "license": "MIT",
+  "type": "module",
   "readmeFilename": "README.md",
   "author": {
     "name": "Umed Khudoiberdiev",
