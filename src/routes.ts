@@ -28,8 +28,8 @@ import { Router } from "express";
 
 const AppRoutes = Router();
 
-AppRoutes.get("/posts", postGetAllAction);
-AppRoutes.get("/post/:id", postGetByIdAction);
-AppRoutes.post("/post", postSaveAction);
+AppRoutes.get("/posts", postGetAllAction.getPosts);
+AppRoutes.get("/post/:id", postGetByIdAction.getOnePost);
+AppRoutes.post("/post", postSaveAction.postPosts);
 
 export default AppRoutes;
